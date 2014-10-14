@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @chain_of_store.name
+p
+  strong Slug:
+  = @chain_of_store.slug
+p
+  strong Type:
+  = @chain_of_store.type
+
+= link_to 'Edit', edit_chain_of_store_path(@chain_of_store)
+'|
+= link_to 'Back', chain_of_stores_path

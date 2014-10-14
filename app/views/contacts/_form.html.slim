@@ -1,0 +1,10 @@
+= simple_form_for(@contact) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :type
+    = f.input :value
+    = f.association :contactable
+
+  .form-actions
+    = f.button :submit

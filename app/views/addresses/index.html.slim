@@ -1,0 +1,37 @@
+h1 Listing addresses
+
+table
+  thead
+    tr
+      th Country
+      th State
+      th City
+      th Pincode
+      th Latitude
+      th Longitude
+      th Area
+      th Streetname
+      th Building
+      th
+      th
+      th
+
+  tbody
+    - @addresses.each do |address|
+      tr
+        td = address.country
+        td = address.state
+        td = address.city
+        td = address.pincode
+        td = address.latitude
+        td = address.longitude
+        td = address.area
+        td = address.streetName
+        td = address.building
+        td = link_to 'Show', address
+        td = link_to 'Edit', edit_address_path(address)
+        td = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Address', new_address_path

@@ -1,0 +1,2 @@
+module ChainOfStoresHelper
+end

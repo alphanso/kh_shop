@@ -1,0 +1,25 @@
+h1 Listing chain_of_stores
+
+table
+  thead
+    tr
+      th Name
+      th Slug
+      th Type
+      th
+      th
+      th
+
+  tbody
+    - @chain_of_stores.each do |chain_of_store|
+      tr
+        td = chain_of_store.name
+        td = chain_of_store.slug
+        td = chain_of_store.type
+        td = link_to 'Show', chain_of_store
+        td = link_to 'Edit', edit_chain_of_store_path(chain_of_store)
+        td = link_to 'Destroy', chain_of_store, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Chain of store', new_chain_of_store_path

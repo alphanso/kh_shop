@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Type:
+  = @contact.type
+p
+  strong Value:
+  = @contact.value
+p
+  strong Contactable:
+  = @contact.contactable
+
+= link_to 'Edit', edit_contact_path(@contact)
+'|
+= link_to 'Back', contacts_path

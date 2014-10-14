@@ -1,0 +1,10 @@
+= simple_form_for(@chain_of_store) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :slug
+    = f.input :type
+
+  .form-actions
+    = f.button :submit
