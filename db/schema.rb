@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20141014204144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "addresses", force: true do |t|
     t.string   "country"
