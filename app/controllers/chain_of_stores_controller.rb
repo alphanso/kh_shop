@@ -56,7 +56,7 @@ class ChainOfStoresController < ApplicationController
   def destroy
     @chain_of_store.destroy
     respond_to do |format|
-      format.html { redirect_to chain_of_stores_url, notice: 'Chain of store was successfully destroyed.' }
+      format.html { redirect_to user_chain_of_stores_url, notice: 'Chain of store was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ChainOfStoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chain_of_store_params
-      params.require(:chain_of_store).permit(:name, :slug, :type)
+      params.require(:chain_of_store).permit(:name, :slug, :category)
     end
 end

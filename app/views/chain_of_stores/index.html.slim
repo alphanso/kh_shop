@@ -5,7 +5,7 @@ table
     tr
       th Name
       th Slug
-      th Type
+      th Category
       th
       th
       th
@@ -15,11 +15,11 @@ table
       tr
         td = chain_of_store.name
         td = chain_of_store.slug
-        td = chain_of_store.type
+        td = chain_of_store.category
         td = link_to 'Show', chain_of_store
         td = link_to 'Edit', edit_chain_of_store_path(chain_of_store)
         td = link_to 'Destroy', chain_of_store, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Chain of store', new_chain_of_store_path
+= link_to 'New Chain of store', new_user_chain_of_store_path

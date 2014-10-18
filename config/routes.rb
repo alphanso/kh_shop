@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  resources :contacts
+  concern :contactable do
+    resources :contacts
+  end
 
-  resources :addresses
+  shallow do
+    resources :users do
+      resources :chain_of_stores do
+        resources :stores do
+          resources :addresses
+          concerns :contactable
+        end
+        concerns :contactable
+      end
+    end
+  end
 
-  resources :stores
-
-  resources :chain_of_stores
-
-  resources :users
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin
