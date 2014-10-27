@@ -4,6 +4,7 @@ class CreateChainOfStores < ActiveRecord::Migration
       t.string :name
       t.string :slug
       t.integer :type
+      t.references :user
 
       t.timestamps
     end

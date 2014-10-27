@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141018050913) do
     t.string   "name"
     t.string   "slug"
     t.integer  "category"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

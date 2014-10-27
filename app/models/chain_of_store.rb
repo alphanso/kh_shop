@@ -1,5 +1,5 @@
 class ChainOfStore < ActiveRecord::Base
-  STORE_TYPES = [:restaurant, :supermarket, :salon]
+  STORE_TYPES = [:salon, :supermarket, :mall]
   enum category: STORE_TYPES
   has_many :stores
   has_many :addresses, through: :stores

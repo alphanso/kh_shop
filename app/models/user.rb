@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  enum role: [:user, :vip, :admin]
+  enum role: {customer: 0, merchant: 1, admin: 2}
   after_initialize :set_default_role, :if => :new_record?
   has_one :chain_of_store
 
@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     if User.count == 0
       self.role ||= :admin
     else
-      self.role ||= :user
+      self.role ||= :merchant
     end
   end
 
