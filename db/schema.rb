@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027113052) do
+ActiveRecord::Schema.define(version: 20141027200240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
+
+  create_table "addresses", force: true do |t|
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.integer  "pincode"
+    t.string   "area"
+    t.string   "street1"
+    t.string   "street2"
+    t.decimal  "latitude",                                         precision: 10, scale: 6
+    t.decimal  "longitude",                                        precision: 10, scale: 6
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.spatial  "location",   limit: {:srid=>3785, :type=>"point"}
+  end
+
+  add_index "addresses", ["location"], :name => "index_addresses_on_location", :spatial => true
+
+  create_table "stores", force: true do |t|
+    t.string   "name"
+    t.integer  "type"
+    t.string   "slug"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -37,7 +65,7 @@ ActiveRecord::Schema.define(version: 20141027113052) do
     t.integer  "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

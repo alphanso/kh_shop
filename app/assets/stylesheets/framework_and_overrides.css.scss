@@ -2,15 +2,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.button {
+  background: #e6e6e6;
+  background: -webkit-linear-gradient(top, #e6e6e6 0, #e6e6e6 100%);
+  background: linear-gradient(to bottom, #e6e6e6 0, #e6e6e6 100%);
+  border-radius: 3px;
+  box-shadow: 0 2px 0 #999;
+  color: #4d4d4d;
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: .8em;
+  padding: .6em 1.3em;
+  position: relative;
+  text-decoration: none;
+  border: 0;
+}
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
   margin: 0 auto;
-  }
+}
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
-  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -18,32 +34,31 @@ img {
 .column {
   @extend .col-md-6;
   @extend .text-center;
-  }
+}
 .form {
   @extend .col-md-6;
-  }
+}
 .form-centered {
   @extend .col-md-6;
   @extend .text-center;
-  }
+}
 .submit {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
-  }
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
-  }
+}
 section {
   @extend .row;
   margin-top: 20px;
-  }
+}
 
 // Styles for form views
 // using Bootstrap

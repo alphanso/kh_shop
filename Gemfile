@@ -18,6 +18,7 @@ gem 'slim-rails'
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'upmin-admin'
+gem 'activerecord-postgis-adapter'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

@@ -1,2 +1,18 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<% if user_signed_in? %>
+    <%= render 'merchants/dashboard' %>
+<% else %>
+    <div>
+      <div class="text-center">
+        <h1>Kahahai makes it easy for customers to locate you.</h1>
+      </div>
+      <div class="text-center layout-twothirds-center">
+        <p>
+          Next generation local search engine. We are trying to connect buyers with sellers in the vicinity.
+        </p>
+        <%= button_to "Sign Up - Its Free.", new_user_registration_path, {:class => "button button-blue", method: :get} %>
+      </div>
+      <div class="text-center layout-twothirds-center">
+        <%= link_to "Or log in", new_user_session_path %>
+      </div>
+    </div>
+<% end %>

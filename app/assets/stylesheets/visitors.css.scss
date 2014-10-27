@@ -1,0 +1,30 @@
+.layout-twothirds-center {
+  display: block;
+  max-width: 585px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.button-blue {
+  background: #20a3ee;
+  background: -webkit-linear-gradient(top, #20a3ee 0, #2a90cb 100%);
+  background: linear-gradient(to bottom, #20a3ee 0, #2a90cb 100%);
+  box-shadow: 0 2px 0 #005180;
+  color: #fff;
+  &:focus, &:hover {
+    background: #1196e4;
+    background: -webkit-linear-gradient(top, #1196e4 0, #2581b6 100%);
+    background: linear-gradient(to bottom, #1196e4 0, #2581b6 100%);
+    color: #fff;
+  }
+}
+
+h1 {
+  font-weight: bold;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  margin: .67em 0;
+  font-size: 1.777em;
+  line-height: 1.2em;
+  display: block;
+}

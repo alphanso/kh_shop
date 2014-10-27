@@ -1,0 +1,39 @@
+p#notice = notice
+
+p
+  strong Country:
+  = @address.country
+p
+  strong State:
+  = @address.state
+p
+  strong City:
+  = @address.city
+p
+  strong Pincode:
+  = @address.pincode
+p
+  strong Area:
+  = @address.area
+p
+  strong Street1:
+  = @address.street1
+p
+  strong Street2:
+  = @address.street2
+p
+  strong Latitude:
+  = @address.latitude
+p
+  strong Longitude:
+  = @address.longitude
+p
+  strong Store:
+  = @address.store
+p
+  strong Location:
+  = @address.location
+
+= link_to 'Edit', edit_address_path(@address)
+'|
+= link_to 'Back', addresses_path
